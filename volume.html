@@ -1,0 +1,204 @@
+<html>
+<head>
+<title>Formula</title>
+<style>
+    .img{                
+                border: 1px solid white;
+                border-radius: 50px;
+                box-shadow: 1px 1px 1px 1px #edf1f2;
+                
+            }
+</style>
+<link rel="stylesheet" href="css/formula_style.css">
+</head>
+
+<body>
+    <a href="kyar.html" ><img src="img/i.png" class="img" width="45" height="30"></a>
+<div class="main">
+<h1>Volume Calculation</h1>
+<lable for="formula"><b>Select a type of formula : </b></lable>
+<select id="formula" onchange="select_option()">
+<option value="cv">Cube Volume</option>
+<option value="cbv">Cuboid Volume</option>
+<option value="cyv">Cylinder Volume</option>
+<option value="cnv">Cone Volume</option>
+<option value="sv">Sphere Volume</option>
+<option value="hv">Hemisphere Volume</option>
+</select>
+        <div id="cv">
+            <h3 style="text-align: center;
+            height: 3.2%;
+            background-color: white;
+            border: 1px solid black;
+            width: 18%;
+            margin-left: 41%;">Cube Volume= Side x Side x Side</h3>
+            <center>
+                <table>
+                    <tr>
+                        <th>Side:</th>
+                        <td><input id="s" type="text"></td>
+                    </tr>
+                
+                    <tr>
+                    <td></td>
+                    <td><button onclick="calculateCubeVolume()">Calculate</button></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><p id="c1"></p></td>
+                    </tr>
+                </table>
+            </center>
+        </div>
+
+        <div id="cbv" style="display: none;">
+            <h3 style="text-align: center;
+            height: 3.2%;
+            background-color: white;
+            border: 1px solid black;
+            width: 25%;
+            margin-left: 41%;">Cuboid Volume = Length x Base x Height</h3>
+            <center>
+                <table>
+                    <tr>
+                        <th>Length:</th>
+                        <td><input id="l" type="text"></td>
+                    </tr>
+                    <tr>
+                        <th>Base:</th>
+                        <td><input id="b" type="text"></td>
+                    </tr>
+                    <tr>
+                        <th>Height:</th>
+                        <td><input id="h" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button onclick="calculateCuboidVolume()">Calculate</button></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><p id="c2"></p></td>
+                    </tr>
+                </table>
+            </center>
+        </div>
+
+        <div id="cyv" style="display:none;">
+            <h3 style="text-align: center;
+            height: 3.2%;
+            background-color: white;
+            border: 1px solid black;
+            width: 28%;
+            margin-left: 41%;">Cylinder Volume= PI * Radius * Radius * Height</h3>
+            <center>
+                <table>
+                    <tr>
+                        <th>Radius:</th>
+                        <td><input id="r2" type="text"></td>
+                    </tr>
+                    <tr>
+                        <th>Height:</th>
+                        <td><input id="h2" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button onclick="calculateCylinderVolume()">Calculate</button></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><p id="c3"></p></td>
+                    </tr>
+                </table>
+            </center>
+        </div> 
+
+         <div id="cnv" style="display: none;">
+                <h3 style="text-align: center;
+                height: 3%;
+                background-color: white;
+                border: 1px solid black;
+                width: 29%;
+                margin-left: 41%;">Cone Volume = 1/3(PI* Radius * Radius * Height) </h3>
+                <center>
+                    <table>
+                        <tr>
+                            <th>Radius:</th>
+                            <td><input id="r3" type="text"></td>
+                        </tr>
+                        <tr>
+                            <th>Height:</th>
+                            <td><input id="h3" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><button onclick="calculateConeVolume()">Calculate</button></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><p id="c4"></p></td>
+                        </tr>
+                    </table>
+                </center>
+        </div>  
+
+        <div id="sv" style="display:none;">
+            <h3 style="text-align: center;
+            height: 3.2%;
+            background-color: white;
+            border: 1px solid black;
+            width: 29%;
+            margin-left: 39%;">Sphere Volume = 4/3(PI * Radius * Radius * Radius)</h3>
+            <center>
+                <table>
+                    <tr>
+                        <th>Radius:</th>
+                        <td><input id="r4" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button onclick="calculateSphereVolume()">Calculate</button></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><p id="c5"></p></td>
+                    </tr>
+                </table>
+            </center>
+        </div>   
+        
+
+        <div id="hv" style="display: none;">
+            <h3 style="text-align: center;
+            height: 3.4%;
+            background-color: white;
+            border: 1px solid black;
+            width: 31%;
+            margin-left: 41%;">Hemisphere Volume = 2/3(PI * Radius * Radius * Radius)</h3>
+            <center>
+                <table>
+                    <tr>
+                        <th>Radius:</th>
+                        <td><input id="r5" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button onclick="calculateHemiSphereVolume()">Calculate</button></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><p id="c6"></p></td>
+                    </tr>
+                </table>
+            </center>
+        </div>
+
+        
+</div>   
+    
+
+
+    <script src="js/volume_cal.js"></script>
+</body>
+</html>
+    

@@ -1,0 +1,44 @@
+
+            body{
+                background: linear-gradient(45deg,transparent,#90caf9);
+            }
+            .part_one,.part_two{
+                text-align: center;
+                margin-top: 200px;
+            }
+            .part_one{
+                float: left;
+                margin-left: 400px;
+            }
+            .part_two{
+                float: right;
+                margin-right: 400px;
+            }
+            .img{                
+                border: 1px solid white;
+                border-radius: 50px;
+                box-shadow: 1px 1px 1px 1px #edf1f2;
+            }
+            .nav{
+            margin-left: 3%;
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            }
+            #logo{
+            float: right;
+            color: balck;
+            margin-right: 20px;
+            font-size: 20px;
+            text-transform: uppercase;
+            }
+            .nav:hover{    
+            border-bottom: 2px solid black;
+            }
+            header{
+            margin-top: 20px;
+            }
+            h2{
+                margin-top: 25px;
+            }
+        

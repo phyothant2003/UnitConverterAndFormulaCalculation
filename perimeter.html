@@ -1,0 +1,203 @@
+<html>
+<head>
+<title>Perimeter</title>
+<style>
+    .img{                
+                border: 1px solid white;
+                border-radius: 50px;
+                box-shadow: 1px 1px 1px 1px #edf1f2;
+                
+            }
+</style>
+<link rel="stylesheet" href="css/perimeter_style.css">
+</head>
+
+<body>
+    <a href="kyar.html" ><img src="img/i.png" class="img" width="45" height="30"></a>
+<div class="main">
+<h1>Perimeter Calculation</h1>
+<lable for="formula"><b>Select a type of formula : </b></lable>
+<select id="formula" onchange="select_option()">
+    <option value="fsp">Square Perimeter</option>
+    <option value="frp">Rectangle Perimeter</option>
+    <option value="ftp">Triangle Perimeter</option>
+    <option value="fqp">Quadrilateral Perimeter</option>
+    <option value="fcp">Circle Perimeter/Circumference</option>
+    <option value="fpp">Parallelogram Perimeter</option>
+</select>
+<div id="fsp">
+    <h3 style="text-align: center;
+    height: 3.2%;
+    background-color: white;
+    border: 1px solid black;
+    width: 18%;
+    margin-left: 41%;">Square Permeter = 4*Length</h3>
+    <center>
+        <table>
+            <tr>
+                <th>Length:</th>
+                <td><input id="l5" type="text"></td>
+            </tr>
+            <tr>
+            <td></td>
+            <td><button onclick="calculateSquarePerimeter()">Calculate</button></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><p id="sp"></p></td>
+            </tr>
+        </table>
+    </center>
+</div> 
+<div id="frp" style="display: none;">
+    <h3 style="text-align: center;
+    height: 3.2%;
+    background-color: white;
+    border: 1px solid black;
+    width: 21%;
+    margin-left: 40%;">Rectangle Permeter = 2*Length*Base</h3>
+    <center>
+        <table>
+            <tr>
+                <th>Length:</th>
+                <td><input id="l6" type="text"></td>
+            </tr>
+            <tr>
+                <th>Base:</th>
+                <td><input id="b6" type="text"></td>
+            </tr>
+            <tr>
+            <td></td>
+            <td><button onclick="calculateRectanglePerimeter()">Calculate</button></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><p id="rp"></p></td>
+            </tr>
+        </table>
+    </center>
+</div> 
+<div id="ftp" style="display: none;">
+    <h3 style="text-align: center;
+    height: 3.2%;
+    background-color: white;
+    border: 1px solid black;
+    width: 22%;
+    margin-left: 39%;">Triangle Permeter =Side1+Side2+Side3 </h3>
+    <center>
+        <table>
+            <tr>
+                <th>Side1:</th>
+                <td><input id="s1" type="text"></td>
+            </tr>
+            <tr>
+                <th>Side2:</th>
+                <td><input id="s2" type="text"></td>
+            </tr>
+            <tr>
+                <th>Side3:</th>
+                <td><input id="s3" type="text"></td>
+            </tr>
+            <tr>
+            <td></td>
+            <td><button onclick="calculateTrianglePermeter()">Calculate</button></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><p id="tp"></p></td>
+            </tr>
+        </table>
+    </center>
+</div>
+<div id="fqp" style="display: none;">
+    <h3 style="text-align: center;
+    height: 3.2%;
+    background-color: white;
+    border: 1px solid black;
+    width: 28%;
+    margin-left: 36%;">Quadrilateral Permeter =Side1+Side2+Side3+side4</h3>
+    <center>
+        <table>
+            <tr>
+                <th>Side1:</th>
+                <td><input id="s4" type="text"></td>
+            </tr>
+            <tr>
+                <th>Side2:</th>
+                <td><input id="s5" type="text"></td>
+            </tr>
+            <tr>
+                <th>Side3:</th>
+                <td><input id="s6" type="text"></td>
+            </tr>
+            <tr>
+                <th>Side4:</th>
+                <td><input id="s7" type="text"></td>
+            </tr>
+            <tr>
+            <td></td>
+            <td><button onclick="calculateQuadrilateralPerimeter()">Calculate</button></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><p id="qp"></p></td>
+            </tr>
+        </table>
+    </center>
+</div>
+<div id="fcp" style="display: none;">
+    <h3 style="text-align: center;
+    height: 3.2%;
+    background-color: white;
+    border: 1px solid black;
+    width: 25%;
+    margin-left: 37.5%;">Circle Permeter/Circumference = 2*PI*Radius</h3>
+    <center>
+        <table>
+            <tr>
+                <th>Radius:</th>
+                <td><input id="r" type="text"></td>
+            </tr>
+            <tr>
+            <td></td>
+            <td><button onclick="calculateCirclePerimeter()">Calculate</button></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><p id="cp"></p></td>
+            </tr>
+        </table>
+    </center>
+</div>
+<div id="fpp" style="display: none;">
+    <h3 style="text-align: center;
+    height: 3.2%;
+    background-color: white;
+    border: 1px solid black;
+    width: 24%;
+    margin-left: 38%;">Parallelogram Permeter =2(Width+Height) </h3>
+    <center>
+        <table>
+            <tr>
+                <th>Width:</th>
+                <td><input id="w" type="text"></td>
+            </tr>
+            <tr>
+                <th>Height:</th>
+                <td><input id="h" type="text"></td>
+            </tr>
+            <tr>
+            <td></td>
+            <td><button onclick="calculateParallelogramPermeter()">Calculate</button></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><p id="pp"></p></td>
+            </tr>
+        </table>
+    </center>
+</div>   
+</div>
+<script src="js/perimeter_cal.js"></script>
+</body>
+</html>
